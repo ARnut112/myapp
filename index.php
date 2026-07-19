@@ -39,7 +39,7 @@
 
 <?php
 
-    $stmt = $conn->prepare("SELECT id, firstname, lastname FROM user");
+    $stmt = $conn->prepare("SELECT id, firstname, lastname FROM users");
     $stmt->execute();
 
     // set the resulting array to associative
