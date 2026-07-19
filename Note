@@ -1,0 +1,19 @@
+This is my first Project is use laragon and phpmyadmin for database management. I have created a database named "lalagon_db" and I want to connect it to my PHP application using PDO. The configuration file (config.php) contains the necessary credentials to establish the connection.
+
+Here is an example of how your config.php file should look to connect to the "lalagon_db" database using PDO:
+
+```php
+<?php
+$servername = "localhost";
+$username = "root"; 
+$password = ""; // Leave this empty if you haven't set a password for the root user
+$dbname = "lalagon_db"; // The name of your database
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully"; 
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
